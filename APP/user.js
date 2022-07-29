@@ -87,7 +87,7 @@ export class UI {
 
     element.innerHTML = "";
 
-    const quest = document.createElement("h2");
+    const quest = document.createElement("h1");
     quest.id = "question";
     element.append(quest);
 
