@@ -6,7 +6,7 @@ export class UI {
 
   /**
    *
-   * @param {string} text question to render
+   * @param {string} Q text
    */
   showQuestion(text) {
     const questionTitle = document.getElementById("question");
@@ -15,7 +15,7 @@ export class UI {
 
   /**
    *
-   * @param {string[]} choices the choices of the question
+   * @param {string[]} 
    */
   showChoices(choices, callback) {
     const choicesContainer = document.getElementById("choices");
@@ -34,31 +34,7 @@ export class UI {
     }
   }
 
-  /**
-   *
-   * @param {number} score the total score
-   */
-  showScores(score) {
-    //
-    const label = document.createElement("label");
-    label.for = "formNombre";
-    const input = document.createElement("input");
-    input.type = "text";
-    input.id = "formNombre";
-    input.className = "button";
-    input.maxLength = "10";
-    input.placeholder = "Tu nombre:";
-
-    const addButton = document.createElement("button");
-    addButton.className = "button";
-    addButton.id = "anadirButton";
-    addButton.innerHTML = "Guardar";
-    addButton.type = "submit";
-    addButton.onclick = function () {
-      var valorInput = document.getElementById("formNombre").value;
-      addPlayer(valorInput, score);
-      showRankings();
-    };
+  {
 
     const volverButton = document.createElement("button");
     volverButton.className = "button";
@@ -69,35 +45,9 @@ export class UI {
       location.reload();
     };
 
-    const totalPuntos = document.createElement("h1");
-    totalPuntos.id = "totalPuntos";
-    totalPuntos.className = "estiloPuntos";
-    totalPuntos.innerHTML = `PUNTOS: `;
-
-    const Puntos = document.createElement("h1");
-    Puntos.id = "Puntos";
-    Puntos.className = "estiloPuntos";
-    Puntos.innerHTML = `${score}`;
-
-    const infoFinal = document.createElement("h2");
-    infoFinal.className = "estiloPuntos";
-    if (score < 50) {
-      infoFinal.innerHTML = "¡UUUUUH!";
-    } else if (score > 50 && score < 100) {
-      infoFinal.innerHTML = "¡MUY BIEN!";
-    } else if (score > 100 && score < 200) {
-      infoFinal.innerHTML = "!PERFECTO!";
-    } else if (score > 200 && score < 290) {
-      infoFinal.innerHTML = "¡EXPERTO!";
-    } else if (score > 290) {
-      infoFinal.innerHTML = "¡MASTER!";
-    }
 
     const element = document.getElementById("quiz");
     element.innerHTML = "";
-    element.append(totalPuntos);
-    element.append(Puntos);
-    element.append(infoFinal);
     element.append(input);
     element.append(addButton);
     element.append(volverButton);
@@ -105,8 +55,8 @@ export class UI {
 
   /**
    *
-   * @param {number} currentIndex the current index of the quiz
-   * @param {number} total the total questions
+   * @param {number} currentIndex
+   * @param {number} total Q
    */
   showProgress(currentIndex, total) {
     const element = document.getElementById("progress");
@@ -115,24 +65,12 @@ export class UI {
 
   showHome() {
 
-    const addLogo = document.createElement("img");
-    addLogo.src = "img/58f367aca4fa116215a923ef.png";
-    addLogo.id = "logo-stardew";
-
     const jugarButton = document.createElement("button");
     jugarButton.id = "jugarButton";
     jugarButton.className = "button";
     jugarButton.textContent = "Jugar";
     jugarButton.type = "submit";
     jugarButton.onclick = startQuiz;
-
-    const rankingButton = document.createElement("button");
-    rankingButton.id = "rankingButton";
-    rankingButton.className = "button";
-    rankingButton.textContent = "Ranking";
-    rankingButton.type = "submit";
-    rankingButton.onclick = function () {
-      showRankings();
     };
 
     const barra = document.createElement("hr");
@@ -140,20 +78,14 @@ export class UI {
     barra.style.display = "none";
 
     const element = document.getElementById("quiz");
-    element.append(addLogo);
     element.append(barra);
     element.append(jugarButton);
-    element.append(rankingButton);
   }
 
   showQuiz() {
     const element = document.getElementById("quiz");
 
     element.innerHTML = "";
-
-    const tem = document.createElement("p");
-    tem.id = "temporizador";
-    element.append(tem);
 
     const quest = document.createElement("h2");
     quest.id = "question";
