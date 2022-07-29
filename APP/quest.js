@@ -1,9 +1,9 @@
 export class Question {
     /**
      *
-     * @param {string} question
-     * @param {string[]} choices 
-     * @param {string} answer 
+     * @param {string} Q text
+     * @param {string[]} choices
+     * @param {string} A 
      */
   
     constructor(text, choices, answer) {
