@@ -6,7 +6,7 @@ export class Quiz {
 
   /**
    *
-   * @param {Question[]} questions
+   * @param {Question[]} Q
    */
   constructor(questions) {
     this.questions = questions;
@@ -14,7 +14,7 @@ export class Quiz {
 
   /**
    *
-   * @returns {Question} the question found
+   * @returns {Question} Q
    */
   getQuestionIndex() {
     return this.questions[this.questionIndex];
@@ -26,7 +26,7 @@ export class Quiz {
 
   /**
    *
-   * @param {string} choice some text
+   * @param {string} CHOICES
    */
   guess(choice) {
     var pos = this.getQuestionIndex().choices.indexOf(choice);
