@@ -1,4 +1,4 @@
-import { questions } from "QA/Q.js";
+import { question } from "QA/Q.js";
 import { Quiz } from "APP/Quiz.js";
 import { Question } from "APP/Quest.js";
 
