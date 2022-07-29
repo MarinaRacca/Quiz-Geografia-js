@@ -1,7 +1,7 @@
 export class Question {
     /**
      *
-     * @param {string} text 
+     * @param {string} question
      * @param {string[]} choices 
      * @param {string} answer 
      */
