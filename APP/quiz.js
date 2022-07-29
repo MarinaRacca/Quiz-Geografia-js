@@ -1,9 +1,8 @@
-import { ui } from "../app.js"; ///?
-import { Question } from "./Question.js";
+import { ui } from "script.js";
+import { Question } from "APP/Quest.js";
 
 export class Quiz {
   questionIndex = 0;
-  score = 0;
 
   /**
    *
@@ -33,14 +32,6 @@ export class Quiz {
     var pos = this.getQuestionIndex().choices.indexOf(choice);
 
     if (this.getQuestionIndex().correctAnswer(choice)) {
-      var points = document.getElementById("temporizador").title;
-
-      if (document.getElementById("temporizador").textContent == "Go!") {
-        this.score += 30;
-      } else {
-        this.score += parseInt(points);
-      }
-    
       document.querySelectorAll("button")[pos].style.background = "green";
 
     } else {
