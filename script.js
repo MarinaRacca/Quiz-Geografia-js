@@ -1,5 +1,4 @@
 import { question } from "QA/Q.js";
-import { Quiz } from "APP/Quiz.js";
 import { Question } from "APP/Quest.js";
 
 export class Quiz {
